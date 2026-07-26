@@ -81,7 +81,7 @@ export default function Footer() {
 
 
             <div className="w-full bg-blue-950 flex flex-col justify-center items-center">
-                <div className="w-7/12 flex gap-3 lg:gap-20 text-white m-5 justify-center">
+                <div className="w-7/12 flex gap-3 lg:gap-15 text-white m-5 justify-center">
                     <p className="lg:text-3xl font-bold text-gray-400">Build with:</p>
                     < FaReact className="text-3xl hover:text-blue-300"/>
                     < RiTailwindCssFill className="text-3xl hover:text-blue-300"/>

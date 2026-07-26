@@ -13,8 +13,11 @@ export default function Card(){
 
     const [message, setmessage] = useState("Select an option to see the result")
     const [answered, setAnswered] = useState(false);
+    const [selectOption, setSelecctOption] = useState("");
     
     const correctType = type;
+
+    // setSelecctOption("meaw");
 
     useEffect(()=>{
         randomPoke()
@@ -54,10 +57,10 @@ const options = [...wrongOption, correctType];
 options.sort(()=> Math.random() - 0.5);
 
 function optionHandler(type){
+    
     if(answered == true) return;
-
     setAnswered(true);
-
+    setSelecctOption(type);
    if(type === correctType){
     setmessage(`🎉Correct, ${name} is ${correctType} pokeee`);
     setscore(score+4);
@@ -102,7 +105,7 @@ function nextPokebtn(){
 
             <div className="options grid grid-cols-2 gap-3 m-5">{
                 options.map((type)=>(
-                     <button key={type} className="border  lg:p-1 rounded-md w-20 lg:w-40 " onClick={() => optionHandler(type)}>
+                     <button key={type} className={`border  lg:p-1 rounded-md w-20 lg:w-40 ${selectOption==type? type==correctType? "bg-green-500 text-white" : "bg-red-500 text-white" : "hover:shadow-md shadow-cyan-500"}`} onClick={() => optionHandler(type)}>
                         {type}
                      </button>
                 ))}
@@ -114,7 +117,7 @@ function nextPokebtn(){
             </div>
 
             <div className="mt-7">
-                <button onClick={nextPokebtn} className="w-55 bg-blue-500/85 text-amber-50 lg:w-70 rounded-4xl p-2 flex items-center justify-center gap-2">
+                <button onClick={nextPokebtn} className="w-55 bg-blue-500/85 text-amber-50 lg:w-70 rounded-4xl p-2 flex items-center justify-center gap-2 hover:bg-blue-600">
                 <span>Next Pokemon</span> <span><FaChevronRight /> </span></button> 
             </div> 
         </div>
