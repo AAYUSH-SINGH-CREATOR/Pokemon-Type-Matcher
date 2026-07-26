@@ -9,14 +9,14 @@ export default function AppContextProvider({children}){
     const [image, setImage] = useState("");
     const [name, setName] = useState("");
     const [type, setType] = useState("");
-    const [loading,setLoading] = useState(false);
+    const [loading,setLoading] = useState(true);
     const [ranid, setRanid] = useState("25");
     const [score ,setscore] = useState(0);
     const [round, setround] = useState(0);
 
 
     async function fetchPoke(ranid){
-      setLoading(true)
+      setLoading(true);
         try{
             let URL = `${baseURL}/${ranid}`;
             let response = await axios.get(URL);
@@ -30,7 +30,7 @@ export default function AppContextProvider({children}){
         catch(error){
              console.log("error aa gya");
         }
-        setLoading(false)
+        setLoading(false);
     }
     
     function randomPoke(){
@@ -51,6 +51,8 @@ export default function AppContextProvider({children}){
         setRanid,
         score,
         setscore,
+        loading,
+        setLoading,
         round, 
         setround,
         fetchPoke,

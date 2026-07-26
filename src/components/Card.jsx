@@ -9,15 +9,13 @@ import { FaRegCircleQuestion } from "react-icons/fa6";
 
 export default function Card(){
 
-    const {image, type, ranid, randomPoke, name, round, score, setscore, loading, setLoading} = useContext(AppContext);
+    const {image, type, ranid, randomPoke, name, round, score, setscore, loading,setLoading ,setImage} = useContext(AppContext);
 
     const [message, setmessage] = useState("Select an option to see the result")
     const [answered, setAnswered] = useState(false);
     const [selectOption, setSelecctOption] = useState("");
     
     const correctType = type;
-
-    // setSelecctOption("meaw");
 
     useEffect(()=>{
         randomPoke()
@@ -78,6 +76,7 @@ function nextPokebtn(){
     setmessage("Select an option to see the result")
     randomPoke();
     setAnswered(false);
+    setImage("");
 }
     
 }
@@ -95,10 +94,9 @@ function nextPokebtn(){
                 <p className="text-gray-600 ">Choose the correct primary type from the options below</p>
             </div>
 
-            <div className="w-10/12 flex justify-center min-h-50 shadow-2xl shadow-[0_10px_25px_rgba(0,0,0,0.16)] bg-blue-400/10 border-gray-500 mt-3 md-4 rounded-3xl">
-                {
-
-                loading ? (<Spinner /> ) :   ( <img src={image} alt="bruhhhh" /> )
+            <div className="w-10/12 flex justify-center min-h-50 shadow-2xl shadow-[0_10px_25px_rgba(0,0,0,0.16)] bg-blue-400/10 border-gray-500 mt-3 md-4 rounded-3xl lg:h-120">
+             {
+                loading ? (<Spinner />) :   ( <img src={image} alt="bruhhhh" onLoad={() => setLoading(false)} onError={() => setLoading(false)} /> )
                 
                 }
             </div>
