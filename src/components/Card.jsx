@@ -96,7 +96,7 @@ function nextPokebtn(){
 
             <div className="w-10/12 flex justify-center min-h-50 shadow-2xl shadow-[0_10px_25px_rgba(0,0,0,0.16)] bg-blue-400/10 border-gray-500 mt-3 md-4 rounded-3xl lg:h-120">
              {
-                loading ? (<Spinner />) :   ( <img src={image} alt="bruhhhh" onLoad={() => setLoading(false)} onError={() => setLoading(false)} /> )
+                loading ? (<Spinner />) :   ( <img src={image} alt="bruhhhh"  className="animateimg"/> )
                 
                 }
             </div>
