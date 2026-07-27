@@ -26,10 +26,10 @@ export default function Header() {
                 </div>
                 <Darkmode />
                 <div className="flex m-3 bg-blue-900 lg:w-30 justify-center rounded-lg ">
-                    <div className="w-10 flex items-center justify-center">
-                        <FaTrophy className="text-2xl lg:text-4xl text-yellow-300 drop-shadow-[0_0_6px_rgba(255,215,0,0.8)]" />
+                    <div className="h-full w-10 flex items-center justify-center">
+                        <FaTrophy className="text-3xl lg:text-4xl text-yellow-300 drop-shadow-[0_0_6px_rgba(255,215,0,0.8)]" />
                     </div>
-                    <p className="flex flex-col ml-3"><span className="font-bold text-white ">Score</span>
+                    <p className="flex flex-col ml-3 justify-center items-center"><span className="font-bold text-white ">Score</span>
                         <span className="text-white text-md lg:text-xl font-bold text-center">{score}</span>
                     </p>
                 </div>

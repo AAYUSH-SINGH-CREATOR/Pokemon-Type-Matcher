@@ -82,7 +82,7 @@ export default function Card() {
     }
 
     return (
-        <div className={`${dark ? "flex justify-center mt-19 p-2 bg-gradient-to-r from-slate-950 to-black" : "flex justify-center mt-25 p-2"} `}>
+        <div className={`${dark ? "flex justify-center mt-24 lg:mt-18 p-2 bg-gradient-to-r from-slate-950 to-black" : "flex justify-center mt-25 p-2"} `}>
             <div className={`${dark ? "bg-gray-950 text-white  w-11/12 lg:w-7/12 shadow-2xl shadow-[0_0_15px_rgba(168,85,247,0.5),0_0_30px_rgba(236,72,153,0.35)] rounded-lg p-5 flex flex-col items-center " : "bg-white w-11/12 lg:w-7/12 shadow-2xl shadow-[0_10px_25px_rgba(0,0,0,0.7)] rounded-lg p-5 flex flex-col items-center"}`}>
                 <div className="flex bg-blue-400/40 p-2 rounded-lg w-35">
                     <img src={pokeIcon} alt="ICon" className="h-7 w-7 rounded-full mr-2" />

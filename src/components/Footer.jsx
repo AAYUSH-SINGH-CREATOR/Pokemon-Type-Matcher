@@ -14,13 +14,6 @@ import { FaHtml5 } from "react-icons/fa";
 import { useContext } from "react";
 import { AppContext } from "../Context/AppContext";
 
-
-
-
-
-
-
-
 export default function Footer() {
 
     const {dark} = useContext(AppContext);
