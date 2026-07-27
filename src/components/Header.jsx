@@ -9,7 +9,7 @@ import Darkmode from "./Darkmode";
 export default function Header() {
 
     const { score, dark } = useContext(AppContext);
-    console.log(dark);
+    // console.log(dark);
 
     return (
         <div className={`${dark ? "w-full fixed top-0 bg-gradient-to-r from-blue-950 to-slate-950 z-50" : "w-full bg-gradient-to-r from-blue-600 to-indigo-400 fixed top-0 z-50"}`}>
