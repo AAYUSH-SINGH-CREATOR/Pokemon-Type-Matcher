@@ -11,6 +11,8 @@ import { FaReact } from "react-icons/fa";
 import { RiTailwindCssFill } from "react-icons/ri";
 import { FaJs } from "react-icons/fa";
 import { FaHtml5 } from "react-icons/fa";
+import { useContext } from "react";
+import { AppContext } from "../Context/AppContext";
 
 
 
@@ -21,9 +23,11 @@ import { FaHtml5 } from "react-icons/fa";
 
 export default function Footer() {
 
+    const {dark} = useContext(AppContext);
+
     return (
         <div className="w-full flex justify-center mt-10 gap-10 items-center flex-col">
-            <div className=" grid grid-cols-2 gap-5 lg:flex lg:w-7/12 justify-between p-4 rounded-lg shadow-xl shadow-gray-400">
+            <div className={`${dark? "grid grid-cols-2 gap-5 lg:flex lg:w-7/12 justify-between p-4 rounded-lg shadow-md shadow-green-500" : "grid grid-cols-2 gap-5 lg:flex lg:w-7/12 justify-between p-4 rounded-lg shadow-xl shadow-gray-400"}`}>
 
 
                 <div className="flex justify-center items-center gap-0.5">
