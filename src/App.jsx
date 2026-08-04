@@ -12,7 +12,9 @@ export default function App() {
   return (
     <div className={`${dark ? "bg-gradient-to-r from-slate-950 to-black" : ""} `}>
       <Header className="w-9/12" />
-      <Card />
+      <main className="pt-20">
+         <Card />
+      </main>
       <Footer />
     </div>
   )

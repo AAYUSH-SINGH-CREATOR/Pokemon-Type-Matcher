@@ -68,7 +68,6 @@ export default function Card() {
             setscore(score - 1);
         }
 
-
     }
 
     function nextPokebtn() {
@@ -77,20 +76,21 @@ export default function Card() {
             randomPoke();
             setAnswered(false);
             setImage("");
+            setSelecctOption("");
         }
 
     }
 
     return (
-        <div className={`${dark ? "flex justify-center mt-24 lg:mt-18 p-2 bg-gradient-to-r from-slate-950 to-black" : "flex justify-center mt-25 p-2"} `}>
+        <div className={`${dark ? "flex justify-center mt-6 p-2 bg-gradient-to-r from-slate-950 to-black" : "flex justify-center mt-6 p-2"} `}>
             <div className={`${dark ? "bg-gray-950 text-white  w-11/12 lg:w-7/12 shadow-2xl shadow-[0_0_15px_rgba(168,85,247,0.5),0_0_30px_rgba(236,72,153,0.35)] rounded-lg p-5 flex flex-col items-center " : "bg-white w-11/12 lg:w-7/12 shadow-2xl shadow-[0_10px_25px_rgba(0,0,0,0.7)] rounded-lg p-5 flex flex-col items-center"}`}>
                 <div className="flex bg-blue-400/40 p-2 rounded-lg w-35">
                     <img src={pokeIcon} alt="ICon" className="h-7 w-7 rounded-full mr-2" />
-                    <p className={`${dark ? "font-bold text-gray-900" : "font-bold text-indigo-500"}`}>Round: {round}</p>
+                    <p className={`${dark ? "font-bold text-indigo-300" : "font-bold text-indigo-500"}`}>Round: {round}</p>
                 </div>
 
                 <div className="mt-3">
-                    <h1 className="font-bold text-xl text-gray-700 text-center">What is this pokemon's type?</h1>
+                    <h1 className={`font-bold text-xl text-center ${dark? "text-gray-300 " : "text-gray-700"}`}>What is this pokemon's type?</h1>
                     <p className="text-gray-600 ">Choose the correct primary type from the options below</p>
                 </div>
 
@@ -101,9 +101,9 @@ export default function Card() {
                     }
                 </div>
 
-                <div className="options grid grid-cols-2 gap-3 m-5">{
+                <div className="options grid grid-cols-2 gap-3 m-5  w-[75%] mx-auto justify-items-center">{
                     options.map((type) => (
-                        <button key={type} className={`border  lg:p-1 rounded-md w-20 lg:w-40 ${selectOption == type ? type == correctType ? "bg-green-500 text-white" : "bg-red-500 text-white" : "hover:shadow-md shadow-cyan-500"}`} onClick={() => optionHandler(type)}>
+                        <button key={type} className={`border lg:p-1 rounded-lg w-20 lg:w-92  ${selectOption == type ? type == correctType ? "bg-green-500 text-white shadow-md shadow-green-400 border-transparent" : "bg-red-500 text-white shadow:md shadow-red-500 border-transparent" : "hover:shadow-md shadow-cyan-500"} ${dark? "border-purple-500 bg-gradient-to-br from-pink-500/20 via-purple-500/20 to-indigo-500/20" : " "}`} onClick={() => optionHandler(type)}>
                             {type}
                         </button>
                     ))}
